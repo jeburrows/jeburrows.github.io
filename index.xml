@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Personal Blog</title>
+    <link>https://blog-jasonb.codeanyapp.com/</link>
+    <description>Recent content on Personal Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 27 Oct 2020 18:20:08 -0400</lastBuildDate>
+    
+	<atom:link href="https://blog-jasonb.codeanyapp.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Astroprint</title>
+      <link>https://blog-jasonb.codeanyapp.com/projects/astroprint/</link>
+      <pubDate>Tue, 27 Oct 2020 18:20:08 -0400</pubDate>
+      
+      <guid>https://blog-jasonb.codeanyapp.com/projects/astroprint/</guid>
+      <description>I&amp;rsquo;ve been messing around with my new Creality CR-6 SE 3D printer recently. It&amp;rsquo;s a fantastic printer if you can overlook it&amp;rsquo;s newness flaws. 3D prints are typically created with a CAD application and saved to a .stl file. The .stl file then needs to be converted to gcode or &amp;ldquo;sliced&amp;rdquo; using a slicer application. Cura by Ultimaker is good slicer, but it does not currently have a printer profile for the Creality CR-6 SE 3D printer.</description>
+    </item>
+    
+    <item>
+      <title>New Pastebin Features</title>
+      <link>https://blog-jasonb.codeanyapp.com/posts/new-pastebin-features/</link>
+      <pubDate>Mon, 26 Oct 2020 08:46:07 -0400</pubDate>
+      
+      <guid>https://blog-jasonb.codeanyapp.com/posts/new-pastebin-features/</guid>
+      <description>I stumbled across this today while looking for a snippet of code on my Pastebin account.
+There are two new features that can be used when creating a new Paste.
+   An individual password can be assigned to each Paste. There an option for &amp;ldquo;Burn after read&amp;rdquo; that can be enabled for each new Paste.  </description>
+    </item>
+    
+    <item>
+      <title>Have I Been Pwned</title>
+      <link>https://blog-jasonb.codeanyapp.com/projects/have-i-been-pwned/</link>
+      <pubDate>Mon, 26 Oct 2020 08:45:45 -0400</pubDate>
+      
+      <guid>https://blog-jasonb.codeanyapp.com/projects/have-i-been-pwned/</guid>
+      <description>Here&amp;rsquo;s a fun little project that lets you check offline if your password has been pwned. Download the SHA-1 password database here and name it pwned-passwords-sha1-ordered-by-count-v6.txt. Then copy the following text into a BeenPwned.sh file in the same directory as the password hash that was downloaded. When run it will prompt for &amp;ldquo;Password to search:&amp;rdquo;. Type in a password and press enter. The script will hash the password you typed and check the hash agains the database.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://blog-jasonb.codeanyapp.com/about/</link>
+      <pubDate>Mon, 26 Oct 2020 08:45:20 -0400</pubDate>
+      
+      <guid>https://blog-jasonb.codeanyapp.com/about/</guid>
+      <description>I&amp;rsquo;m always trying something new. Currently you are looking at my attempt to learn Hugo.</description>
+    </item>
+    
+    <item>
+      <title>Hugo Shortcode</title>
+      <link>https://blog-jasonb.codeanyapp.com/posts/hugo-shortcode/</link>
+      <pubDate>Mon, 26 Oct 2020 08:40:05 -0400</pubDate>
+      
+      <guid>https://blog-jasonb.codeanyapp.com/posts/hugo-shortcode/</guid>
+      <description>I&amp;rsquo;m trying to setup and use Hugo to make a personal blog for collecting thoughts and documenting test results from tinkering.
+I&amp;rsquo;m using the Coder Theme theme for Hugo. I&amp;rsquo;ve made enough changes to it that it can no longer be updated from Git. Little tweaks like changing the Google Fonts, fixing mismatch header sizes, modifications to layouts, etc. I&amp;rsquo;ve managed to get CloudApp working as a Shortcode.
+Here&amp;rsquo;s an image from CloudApp.</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://blog-jasonb.codeanyapp.com/contact/</link>
+      <pubDate>Mon, 26 Oct 2020 08:26:26 -0400</pubDate>
+      
+      <guid>https://blog-jasonb.codeanyapp.com/contact/</guid>
+      <description>This is just a placeholder for a page in this theme.</description>
+    </item>
+    
+  </channel>
+</rss>
