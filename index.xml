@@ -17,7 +17,8 @@
       <pubDate>Wed, 28 Oct 2020 19:24:55 -0400</pubDate>
       
       <guid>https://blog.burrows.family/projects/google-dynamic-dns/</guid>
-      <description>Running a hobby server at home can be a great way to learn something new. Hobby Linux servers have been a passion of mine for their simplicity and cost. They can be a quick way to kick the tires on an interesting CRM, ticket system, media server, etc. One of my favorite sites for this is TurnKey Linux. While testing on a local hobby server may work just fine for most situations, there may be an instance where you want to have a public or remote access to your server.</description>
+      <description>Running a hobby server at home can be a great way to learn something new. Hobby Linux servers have been a passion of mine for their simplicity and cost. They can be a quick way to kick the tires on an interesting CRM, ticket system, media server, etc. One of my favorite sites for this is TurnKey Linux.  
+While testing on a local hobby server may work just fine for most situations, there may be an instance where you want to have a public or remote access to your server.</description>
     </item>
     
     <item>
