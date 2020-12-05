@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://blog.burrows.family/posts/astroprint/</loc>
+    <lastmod>2020-10-29T18:20:08-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.burrows.family/</loc>
+    <lastmod>2020-10-29T18:20:08-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.burrows.family/posts/</loc>
+    <lastmod>2020-10-29T18:20:08-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.burrows.family/posts/google-dynamic-dns/</loc>
+    <lastmod>2020-10-28T19:24:55-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.burrows.family/posts/have-i-been-pwned/</loc>
+    <lastmod>2020-10-26T08:45:45-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.burrows.family/about/</loc>
+    <lastmod>2020-10-26T08:45:20-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.burrows.family/contact/</loc>
+    <lastmod>2020-10-26T08:26:26-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.burrows.family/posts/new-pastebin-features/</loc>
+    <lastmod>2020-10-25T08:46:07-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.burrows.family/posts/hugo-shortcode/</loc>
+    <lastmod>2020-10-24T08:40:05-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.burrows.family/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://blog.burrows.family/series/</loc>
+  </url>
+  
+  <url>
+    <loc>https://blog.burrows.family/tags/</loc>
+  </url>
+  
+</urlset>

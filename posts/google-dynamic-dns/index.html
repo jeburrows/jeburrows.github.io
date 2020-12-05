@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+
+    <meta name="author" content="Jason E. Burrows">
+    <meta name="description" content="Running a hobby server at home can be a great way to learn something new. Hobby Linux servers have been a passion of mine for their simplicity and cost. They can be a quick way to kick the tires on an interesting CRM, ticket system, media server, etc. One of my favorite sites for this is TurnKey Linux.   While testing on a local hobby server may work just fine for most situations, there may be an instance where you want to have a public or remote access to your server.">
+    <meta name="keywords" content="blog,developer,personal">
+
+    
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Google Dynamic DNS"/>
+<meta name="twitter:description" content="Running a hobby server at home can be a great way to learn something new. Hobby Linux servers have been a passion of mine for their simplicity and cost. They can be a quick way to kick the tires on an interesting CRM, ticket system, media server, etc. One of my favorite sites for this is TurnKey Linux.   While testing on a local hobby server may work just fine for most situations, there may be an instance where you want to have a public or remote access to your server."/>
+
+    <meta property="og:title" content="Google Dynamic DNS" />
+<meta property="og:description" content="Running a hobby server at home can be a great way to learn something new. Hobby Linux servers have been a passion of mine for their simplicity and cost. They can be a quick way to kick the tires on an interesting CRM, ticket system, media server, etc. One of my favorite sites for this is TurnKey Linux.   While testing on a local hobby server may work just fine for most situations, there may be an instance where you want to have a public or remote access to your server." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.burrows.family/posts/google-dynamic-dns/" />
+<meta property="article:published_time" content="2020-10-28T19:24:55-04:00" />
+<meta property="article:modified_time" content="2020-10-28T19:24:55-04:00" />
+
+
+    
+      <base href="https://blog.burrows.family/posts/google-dynamic-dns/">
+    
+    <title>
+  Google Dynamic DNS · Personal Blog
+</title>
+
+    
+      <link rel="canonical" href="https://blog.burrows.family/posts/google-dynamic-dns/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Yrsa:400,700%7CSaira:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://blog.burrows.family/css/coder.min.beb70f36040f5f30c7ae1d957f064491464901c23d8eaeddfb74cf9021e50c53.css" integrity="sha256-vrcPNgQPXzDHrh2VfwZEkUZJAcI9jq7d&#43;3TPkCHlDFM=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://blog.burrows.family/css/coder-dark.min.717236c74e0a5208ef73964a9f44c6b443b689a95b270d8b2a40d0c012460dac.css" integrity="sha256-cXI2x04KUgjvc5ZKn0TGtEO2ialbJw2LKkDQwBJGDaw=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://blog.burrows.family/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://blog.burrows.family/images/favicon-16x16.png" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="https://blog.burrows.family/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon"  sizes="180x180" href="https://blog.burrows.family/images/apple-touch-icon.png">
+
+    <meta name="generator" content="Hugo 0.74.3" />
+  </head>
+  
+  
+  
+    
+  
+  <body class="colorscheme-dark"
+        onload=""
+  >
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://blog.burrows.family/">
+      Personal Blog
+    </a>
+    
+      <span id="dark-mode-toggle" class="float-right">
+        <i class="fas fa-adjust fa-fw"></i>
+      </span>
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fas fa-bars fa-fw"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://blog.burrows.family/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://blog.burrows.family/posts/">Blog</a>
+            </li>
+          
+        
+        
+        <li class="navigation-item separator">
+          <span>|</span>
+        </li>
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+        <div class="post-title">
+          <h1 class="title">Google Dynamic DNS</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2020-10-28T19:24:55-04:00'>
+                October 28, 2020
+              </time>
+            </span>
+          </div>
+          
+          
+        </div>
+
+      <div>
+        
+        <p>Running a hobby server at home can be a great way to learn something new. Hobby Linux servers have been a passion of mine for their simplicity and cost. They can be a quick way to kick the tires on an interesting CRM, ticket system, media server, etc. One of my favorite sites for this is <a href="https://turnkeylinux.org">TurnKey Linux</a>.
+<figure>
+    <img src="https://blog.burrows.family/images/blog/TurnkeyLinux.png"/> 
+</figure>
+</p>
+<p>While testing on a local hobby server may work just fine for most situations, there may be an instance where you want to have a public or remote access to your server. If you don&rsquo;t have a static IP address through your ISP then you may need to use a service like <a href="https://noip.com">No-IP</a>. Services like No-IP will give you a hostname and client software which will check your current public IP address and update the hostname. These services work well as long as you have a way to run the client software. One of my favorite services <a href="https://dyn.com">DynDNS</a> has recently been aquired by Oracle and now requires you to move to their cloud service.</p>
+<p>There&rsquo;s a solution that&rsquo;s been right under my nose. Google offers a dynamic DNS solution as part of their <a href="https://domains.google.com">Google Domains</a> service.
+Google offers similar client options for updating the service with your current IP address, but this can lead to the same issue of needing to run client softare on some system. A quick solution would be to run a script or cronjob. This should not nor require any additional softare packages on most Linux systems. Here&rsquo;s a cronjob for updating Google&rsquo;s Dynamic DNS. Enter required username, password, and hostname that you setup in the DNS portion of Google Domains. The cronjob will check your public IP address every five minutes and update the service if it changes. Enjoy!</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#0f0;font-weight:bold">#!/bin/sh
+</span><span style="color:#0f0;font-weight:bold"></span><span style="color:#007f7f"># Script for updating Google Domains Dynamic DNS with your current IP address.</span>
+userName=<span style="color:#0ff;font-weight:bold">&#34;&#34;</span>
+passWord=<span style="color:#0ff;font-weight:bold">&#34;&#34;</span>
+hostName=<span style="color:#0ff;font-weight:bold">&#34;&#34;</span>
+ipAddress=<span style="color:#fff;font-weight:bold">$(</span>curl -s <span style="color:#0ff;font-weight:bold">&#34;https://domains.google.com/checkip&#34;</span><span style="color:#fff;font-weight:bold">)</span>
+curl -s https://<span style="color:#0ff;font-weight:bold">${</span>userName<span style="color:#0ff;font-weight:bold">}</span>:<span style="color:#0ff;font-weight:bold">${</span>passWord<span style="color:#0ff;font-weight:bold">}</span>@domains.google.com/nic/update?hostname=<span style="color:#0ff;font-weight:bold">${</span>hostName<span style="color:#0ff;font-weight:bold">}</span>&amp;myip=$ipAddress
+
+<span style="color:#007f7f"># Create a crontab with the following to run the script every 5 minutes starting with minute 0.</span>
+<span style="color:#007f7f"># */5 * * * * /bin/sh /path/to/google_dyndns_updater.sh</span>
+<span style="color:#007f7f"># or this one if you want it to run on designated minutes (usful for multiple jobs)</span>
+<span style="color:#007f7f"># 0,5,10,15,20,25,30,35,40,45,50,55 * * * * /bin/sh /path/to/google_dyndns_updater.sh</span></code></pre></div>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      
+    </main>
+
+    
+      
+      <script src="https://blog.burrows.family/js/dark-mode.min.0213e1773e6d1c5a644f847c67a6f8abac49a3776e2976f6008038af8c5b76a1.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+  </body>
+
+</html>
