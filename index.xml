@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Personal Blog</title>
+    <title>Home</title>
     <link>https://blog.burrows.family/</link>
-    <description>Recent content on Personal Blog</description>
+    <description>Recent content on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 29 Oct 2020 18:20:08 -0400</lastBuildDate>
