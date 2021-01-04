@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 29 Oct 2020 18:20:08 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 04 Jan 2021 08:49:37 -0500</lastBuildDate>
     
 	<atom:link href="https://blog.burrows.family/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Goodbye 2020</title>
+      <link>https://blog.burrows.family/posts/goodbye-2020/</link>
+      <pubDate>Mon, 04 Jan 2021 08:49:37 -0500</pubDate>
+      
+      <guid>https://blog.burrows.family/posts/goodbye-2020/</guid>
+      <description>Welcome 2021   Looking back, 2020 will be remembered, but maybe not in the way that many of us thought. 2020 is behind us now, so it&amp;rsquo;s time to look forward to see what 2021 will bring us. Happy New Year!</description>
+    </item>
     
     <item>
       <title>Astroprint</title>
@@ -57,7 +66,7 @@ There are two new features that can be used when creating a new Paste.
       <guid>https://blog.burrows.family/posts/hugo-shortcode/</guid>
       <description>I&amp;rsquo;m trying to setup and use Hugo to make a personal blog for collecting thoughts and documenting test results from tinkering.
 I&amp;rsquo;m using the Coder Theme theme for Hugo. I&amp;rsquo;ve made enough changes to it that it can no longer be updated from Git. Little tweaks like changing the Google Fonts, fixing mismatch header sizes, modifications to layouts, etc. I&amp;rsquo;ve managed to get CloudApp working as a Shortcode.
-Here&amp;rsquo;s an video from CloudApp.</description>
+Here&amp;rsquo;s an video from CloudApp about the Have I Been Pwned local script.</description>
     </item>
     
   </channel>
