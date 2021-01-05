@@ -7,17 +7,23 @@
     <meta http-equiv="Content-Language" content="en">
 
     <meta name="author" content="Jason E. Burrows">
-    <meta name="description" content="As we look back, 2020 will be remembered but maybe not in the way that many of us thought. 2020 is behind us now, so it&rsquo;s time to look forward to seeing what 2021 will bring us. Happy New Year!">
+    <meta name="description" content="As we look back, 2020 will be remembered but maybe not in the way that many of us thought. 2020 is behind us now, so it&rsquo;s time to look forward to seeing what 2021 will bring us. Happy New Year!
+Here&rsquo;s a fun little one-liner to count down to 2022 in the Linux terminal.
+until [ $V == 0 ];do clear;V=$((`date &#43;%s -d&#34;2022-01-01&#34;`-`date &#43;%s`));figlet $(python -c &#39;import time;print time.">
     <meta name="keywords" content="blog,personal">
 
     
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Goodbye 2020"/>
-<meta name="twitter:description" content="As we look back, 2020 will be remembered but maybe not in the way that many of us thought. 2020 is behind us now, so it&rsquo;s time to look forward to seeing what 2021 will bring us. Happy New Year!"/>
+<meta name="twitter:description" content="As we look back, 2020 will be remembered but maybe not in the way that many of us thought. 2020 is behind us now, so it&rsquo;s time to look forward to seeing what 2021 will bring us. Happy New Year!
+Here&rsquo;s a fun little one-liner to count down to 2022 in the Linux terminal.
+until [ $V == 0 ];do clear;V=$((`date &#43;%s -d&#34;2022-01-01&#34;`-`date &#43;%s`));figlet $(python -c &#39;import time;print time."/>
 
     <meta property="og:title" content="Goodbye 2020" />
-<meta property="og:description" content="As we look back, 2020 will be remembered but maybe not in the way that many of us thought. 2020 is behind us now, so it&rsquo;s time to look forward to seeing what 2021 will bring us. Happy New Year!" />
+<meta property="og:description" content="As we look back, 2020 will be remembered but maybe not in the way that many of us thought. 2020 is behind us now, so it&rsquo;s time to look forward to seeing what 2021 will bring us. Happy New Year!
+Here&rsquo;s a fun little one-liner to count down to 2022 in the Linux terminal.
+until [ $V == 0 ];do clear;V=$((`date &#43;%s -d&#34;2022-01-01&#34;`-`date &#43;%s`));figlet $(python -c &#39;import time;print time." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.burrows.family/posts/goodbye-2020/" />
 <meta property="article:published_time" content="2021-01-04T08:49:37-05:00" />
@@ -134,6 +140,8 @@
 </figure>
 
 As we look back, 2020 will be remembered but maybe not in the way that many of us thought. 2020 is behind us now, so it&rsquo;s time to look forward to seeing what 2021 will bring us. Happy New Year!</p>
+<p>Here&rsquo;s a fun little one-liner to count down to 2022 in the Linux terminal.<br>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#fff;font-weight:bold">until</span> [ $V == <span style="color:#ff0;font-weight:bold">0</span> ];<span style="color:#fff;font-weight:bold">do</span> clear;V=<span style="color:#fff;font-weight:bold">$((</span><span style="color:#0ff;font-weight:bold">`</span>date +%s -d<span style="color:#0ff;font-weight:bold">&#34;2022-01-01&#34;</span><span style="color:#0ff;font-weight:bold">`</span>-<span style="color:#0ff;font-weight:bold">`</span>date +%s<span style="color:#0ff;font-weight:bold">`</span><span style="color:#fff;font-weight:bold">))</span>;figlet <span style="color:#fff;font-weight:bold">$(</span>python -c <span style="color:#0ff;font-weight:bold">&#39;import time;print time.strftime(&#34;%j:%H:%M:%S&#34;,time.gmtime(&#39;</span>$V<span style="color:#0ff;font-weight:bold">&#39;))&#39;</span><span style="color:#fff;font-weight:bold">)</span>;sleep 1;<span style="color:#fff;font-weight:bold">done</span>;figlet <span style="color:#0ff;font-weight:bold">&#39;Happy New Year!&#39;</span></code></pre></div></p>
 
       </div>
 
