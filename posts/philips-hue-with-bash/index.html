@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+
+    <meta name="author" content="Jason E. Burrows">
+    <meta name="description" content="Koen van Zeijl recently posted a fantastic guide Toggle Philips Hue Depending on Your PC State for accessing the API of your Philips Hue Bridge in order to control lights from PowerShell and Windows task scheduler.
+I thought it would be fun to create a guide for using curl and bash for basic Hue automation in Linux. We&rsquo;ll start with making sure the Huge Bridge can be accesses from a static IP address.">
+    <meta name="keywords" content="blog,personal">
+
+    
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Philips Hue With Bash"/>
+<meta name="twitter:description" content="Koen van Zeijl recently posted a fantastic guide Toggle Philips Hue Depending on Your PC State for accessing the API of your Philips Hue Bridge in order to control lights from PowerShell and Windows task scheduler.
+I thought it would be fun to create a guide for using curl and bash for basic Hue automation in Linux. We&rsquo;ll start with making sure the Huge Bridge can be accesses from a static IP address."/>
+
+    <meta property="og:title" content="Philips Hue With Bash" />
+<meta property="og:description" content="Koen van Zeijl recently posted a fantastic guide Toggle Philips Hue Depending on Your PC State for accessing the API of your Philips Hue Bridge in order to control lights from PowerShell and Windows task scheduler.
+I thought it would be fun to create a guide for using curl and bash for basic Hue automation in Linux. We&rsquo;ll start with making sure the Huge Bridge can be accesses from a static IP address." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.burrows.family/posts/philips-hue-with-bash/" />
+<meta property="article:published_time" content="2021-02-27T09:52:57-05:00" />
+<meta property="article:modified_time" content="2021-02-27T09:52:57-05:00" />
+
+
+    
+      <base href="https://blog.burrows.family/posts/philips-hue-with-bash/">
+    
+    <title>
+  Philips Hue With Bash · Home
+</title>
+
+    
+      <link rel="canonical" href="https://blog.burrows.family/posts/philips-hue-with-bash/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Yrsa:400,700%7CSaira:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://blog.burrows.family/css/coder.min.beb70f36040f5f30c7ae1d957f064491464901c23d8eaeddfb74cf9021e50c53.css" integrity="sha256-vrcPNgQPXzDHrh2VfwZEkUZJAcI9jq7d&#43;3TPkCHlDFM=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://blog.burrows.family/css/coder-dark.min.717236c74e0a5208ef73964a9f44c6b443b689a95b270d8b2a40d0c012460dac.css" integrity="sha256-cXI2x04KUgjvc5ZKn0TGtEO2ialbJw2LKkDQwBJGDaw=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://blog.burrows.family/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://blog.burrows.family/images/favicon-16x16.png" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="https://blog.burrows.family/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon"  sizes="180x180" href="https://blog.burrows.family/images/apple-touch-icon.png">
+
+    <meta name="generator" content="Hugo 0.74.3" />
+  </head>
+  
+  
+  
+    
+  
+  <body class="colorscheme-dark"
+        onload=""
+  >
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://blog.burrows.family/">
+      Home
+    </a>
+    
+      <span id="dark-mode-toggle" class="float-right">
+        <i class="fas fa-adjust fa-fw"></i>
+      </span>
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fas fa-bars fa-fw"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://blog.burrows.family/posts/">Blog</a>
+            </li>
+          
+        
+        
+        <li class="navigation-item separator">
+          <span>|</span>
+        </li>
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+        <div class="post-title">
+          <h1 class="title">Philips Hue With Bash</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2021-02-27T09:52:57-05:00'>
+                February 27, 2021
+              </time>
+            </span>
+          </div>
+          
+          
+        </div>
+
+      <div>
+        
+        <p><a href="https://koenvanzeijl.medium.com">Koen van Zeijl</a> recently posted a fantastic guide <a href="https://levelup.gitconnected.com/toggle-philips-hue-depending-on-your-pc-state-8d7dc1e4f5b">Toggle Philips Hue Depending on Your PC State</a> for accessing the API of your Philips Hue Bridge in order to control lights from <strong>PowerShell</strong> and <strong>Windows task scheduler</strong>.</p>
+<p>I thought it would be fun to create a guide for using <a href="https://curl.se/">curl</a> and <a href="https://tiswww.case.edu/php/chet/bash/bashtop.html">bash</a> for basic Hue automation in Linux. We&rsquo;ll start with making sure the Huge Bridge can be accesses from a static IP address.  DHCP reservation or static IP can be used for this. Let&rsquo;s go over setting a static IP address for this task.</p>
+<p>Open the <a href="https://play.google.com/store/apps/details?id=com.philips.lighting.hue2&amp;hl=en_US&amp;gl=US">Philips Hue app</a> on your mobile device, and follow the screenshots below.  The images were taken from an Android but iOS should be similar.
+<figure>
+    <img src="https://blog.burrows.family/images/blog/Hue%201-3.jpg"/> 
+</figure>
+
+<figure>
+    <img src="https://blog.burrows.family/images/blog/Hue%204-6.jpg"/> 
+</figure>
+</p>
+<p>Power cycle the Hue Bridge and verify that it now has the IP address specified by browsing to <a href="https://discovery.meethue.com/">https://discovery.meethue.com/</a> and looking at the JSON output. Verify that the <code>&quot;internalipaddress&quot;</code> shows the IP address that you specified in the above steps.</p>
+<p>Open a terminal and run the following curl command: <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl --silent -H  <span style="color:#0ff;font-weight:bold">&#34;Content-Type: application/json&#34;</span>  -d  <span style="color:#0ff;font-weight:bold">&#39;{&#34;devicetype&#34;:&#34;&lt;descriptive_name&gt;&#34;}&#39;</span> http://&lt;hue_bridge_ip_address&gt;/api &amp;&amp;  <span style="color:#fff;font-weight:bold">echo</span> </code></pre></div></p>
+<p>The response should be <code>&quot;link button not pressed&quot;</code>. Press the center button on the Hue Bridge and then run the same command again.</p>
+<p>Now the response should be <code>&quot;success&quot;</code> followed by a long string of characters for a username. Copy that long string and keep it handy because we will need it for the remaining steps.</p>
+<p>Let&rsquo;s see if everything works by getting a list of all the Hue lights.
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl --silent  -k http://&lt;hue_bridge_ip_address&gt;/api/&lt;api_key&gt;/lights | jq <span style="color:#0ff;font-weight:bold">&#39;.[] | .name&#39;</span></code></pre></div></p>
+<p>If all goes well, a list of your Hue lights will be displayed. However, for each light, there is a light ID that will be needed to control the light. This next command will pull all the lights with their corresponding ID and save it to a text file named &ldquo;lights.txt&rdquo;.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#fff;font-weight:bold">for</span> i in {1..30}; <span style="color:#fff;font-weight:bold">do</span> light=<span style="color:#fff;font-weight:bold">$(</span>curl --silent http://&lt;hue_bridge_ip_address&gt;/api/&lt;api_key&gt;/lights/$i | jq -r <span style="color:#0ff;font-weight:bold">&#39;.name&#39;</span><span style="color:#fff;font-weight:bold">)</span>; <span style="color:#fff;font-weight:bold">if</span> [ $? -eq <span style="color:#ff0;font-weight:bold">0</span> ]; <span style="color:#fff;font-weight:bold">then</span> <span style="color:#fff;font-weight:bold">echo</span> $i is $light; <span style="color:#fff;font-weight:bold">fi</span>; <span style="color:#fff;font-weight:bold">done</span> &gt; lights.txt</code></pre></div>
+<p>To turn a light on or off, the <code>{&quot;on&quot;:true}</code> variable will need to be sent to the bridge with the appropriate <code>ID</code> of the target light. If the target light <code>&quot;Floor Lamp&quot;</code> has the ID of <code>&quot;19&quot;</code> then the command to turn the light on would be&hellip;</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl --silent -X PUT -H <span style="color:#0ff;font-weight:bold">&#34;Content-Type: application/json&#34;</span> -d <span style="color:#0ff;font-weight:bold">&#39;{&#34;on&#34;:true}&#39;</span> <span style="color:#0ff;font-weight:bold">&#34;http://&lt;hue_bridge_ip_address&gt;/api/&lt;api_key&gt;/lights/19/state&#34;</span> &gt; /dev/null</code></pre></div>
+<p>There&rsquo;s the basics to build some powerful Bash scripts for automating your Philips Hue lights. The rest is up to you.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      
+    </main>
+
+    
+      
+      <script src="https://blog.burrows.family/js/dark-mode.min.0213e1773e6d1c5a644f847c67a6f8abac49a3776e2976f6008038af8c5b76a1.js"></script>
+    
+
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-190774397-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+    
+
+    
+
+  </body>
+
+</html>

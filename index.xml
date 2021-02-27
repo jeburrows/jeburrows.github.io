@@ -6,10 +6,20 @@
     <description>Recent content on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 04 Jan 2021 08:49:37 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 27 Feb 2021 09:52:57 -0500</lastBuildDate>
     
 	<atom:link href="https://blog.burrows.family/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Philips Hue With Bash</title>
+      <link>https://blog.burrows.family/posts/philips-hue-with-bash/</link>
+      <pubDate>Sat, 27 Feb 2021 09:52:57 -0500</pubDate>
+      
+      <guid>https://blog.burrows.family/posts/philips-hue-with-bash/</guid>
+      <description>Koen van Zeijl recently posted a fantastic guide Toggle Philips Hue Depending on Your PC State for accessing the API of your Philips Hue Bridge in order to control lights from PowerShell and Windows task scheduler.
+I thought it would be fun to create a guide for using curl and bash for basic Hue automation in Linux. We&amp;rsquo;ll start with making sure the Huge Bridge can be accesses from a static IP address.</description>
+    </item>
     
     <item>
       <title>Goodbye 2020</title>

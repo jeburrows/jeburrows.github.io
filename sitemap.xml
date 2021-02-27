@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://blog.burrows.family/posts/goodbye-2020/</loc>
-    <lastmod>2021-01-04T08:49:37-05:00</lastmod>
+    <loc>https://blog.burrows.family/</loc>
+    <lastmod>2021-02-27T09:52:57-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.burrows.family/</loc>
-    <lastmod>2021-01-04T08:49:37-05:00</lastmod>
+    <loc>https://blog.burrows.family/posts/philips-hue-with-bash/</loc>
+    <lastmod>2021-02-27T09:52:57-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.burrows.family/posts/</loc>
+    <lastmod>2021-02-27T09:52:57-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.burrows.family/posts/goodbye-2020/</loc>
     <lastmod>2021-01-04T08:49:37-05:00</lastmod>
   </url>
   
