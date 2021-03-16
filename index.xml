@@ -29,7 +29,7 @@ I thought it would be fun to create a guide for using curl and bash for basic Hu
       <guid>https://blog.burrows.family/posts/goodbye-2020/</guid>
       <description>As we look back, 2020 will be remembered but maybe not in the way that many of us thought. 2020 is behind us now, so it&amp;rsquo;s time to look forward to seeing what 2021 will bring us. Happy New Year!
 Here&amp;rsquo;s a fun little one-liner to count down to 2022 in the Linux terminal.
-until [ $V == 0 ];do clear;V=$((`date +%s -d&amp;#34;2022-01-01&amp;#34;`-`date +%s`));figlet $(python -c &amp;#39;import time;print time.</description>
+until [ $V == 0 ];do clear;V=$((`date +%s -d&amp;#34;2022-01-01&amp;#34;`-`date +%s`)); \ figlet $(python -c &amp;#39;import time;print time.</description>
     </item>
     
     <item>
