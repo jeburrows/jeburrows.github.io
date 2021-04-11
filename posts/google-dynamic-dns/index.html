@@ -137,18 +137,18 @@
 <p>While testing on a local hobby server may work just fine for most situations, there may be an instance where you want to have a public or remote access to your server. If you don&rsquo;t have a static IP address through your ISP then you may need to use a service like <a href="https://noip.com">No-IP</a>. Services like No-IP will give you a hostname and client software which will check your current public IP address and update the hostname. These services work well as long as you have a way to run the client software. One of my favorite services <a href="https://dyn.com">DynDNS</a> has recently been aquired by Oracle and now requires you to move to their cloud service.</p>
 <p>There&rsquo;s a solution that&rsquo;s been right under my nose. Google offers a dynamic DNS solution as part of their <a href="https://domains.google.com">Google Domains</a> service.
 Google offers similar client options for updating the service with your current IP address, but this can lead to the same issue of needing to run client softare on some system. A quick solution would be to run a script or cronjob. This should not nor require any additional softare packages on most Linux systems. Here&rsquo;s a cronjob for updating Google&rsquo;s Dynamic DNS. Enter required username, password, and hostname that you setup in the DNS portion of Google Domains. The cronjob will check your public IP address every five minutes and update the service if it changes. Enjoy!</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#0f0;font-weight:bold">#!/bin/sh
-</span><span style="color:#0f0;font-weight:bold"></span><span style="color:#007f7f"># Script for updating Google Domains Dynamic DNS with your current IP address.</span>
-userName=<span style="color:#0ff;font-weight:bold">&#34;&#34;</span>
-passWord=<span style="color:#0ff;font-weight:bold">&#34;&#34;</span>
-hostName=<span style="color:#0ff;font-weight:bold">&#34;&#34;</span>
-ipAddress=<span style="color:#fff;font-weight:bold">$(</span>curl -s <span style="color:#0ff;font-weight:bold">&#34;https://domains.google.com/checkip&#34;</span><span style="color:#fff;font-weight:bold">)</span>
-curl -s https://<span style="color:#0ff;font-weight:bold">${</span>userName<span style="color:#0ff;font-weight:bold">}</span>:<span style="color:#0ff;font-weight:bold">${</span>passWord<span style="color:#0ff;font-weight:bold">}</span>@domains.google.com/nic/update?hostname=<span style="color:#0ff;font-weight:bold">${</span>hostName<span style="color:#0ff;font-weight:bold">}</span>&amp;myip=$ipAddress
+<div class="highlight"><pre style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#5f8700">#!/bin/sh
+</span><span style="color:#5f8700"></span><span style="color:#4e4e4e"># Script for updating Google Domains Dynamic DNS with your current IP address.</span>
+<span style="color:#0087ff">userName</span>=<span style="color:#00afaf">&#34;&#34;</span>
+<span style="color:#0087ff">passWord</span>=<span style="color:#00afaf">&#34;&#34;</span>
+<span style="color:#0087ff">hostName</span>=<span style="color:#00afaf">&#34;&#34;</span>
+<span style="color:#0087ff">ipAddress</span>=<span style="color:#5f8700">$(</span>curl -s <span style="color:#00afaf">&#34;https://domains.google.com/checkip&#34;</span><span style="color:#5f8700">)</span>
+curl -s https://<span style="color:#00afaf">${</span><span style="color:#0087ff">userName</span><span style="color:#00afaf">}</span>:<span style="color:#00afaf">${</span><span style="color:#0087ff">passWord</span><span style="color:#00afaf">}</span>@domains.google.com/nic/update?hostname=<span style="color:#00afaf">${</span><span style="color:#0087ff">hostName</span><span style="color:#00afaf">}</span>&amp;<span style="color:#0087ff">myip</span>=<span style="color:#0087ff">$ipAddress</span>
 
-<span style="color:#007f7f"># Create a crontab with the following to run the script every 5 minutes starting with minute 0.</span>
-<span style="color:#007f7f"># */5 * * * * /bin/sh /path/to/google_dyndns_updater.sh</span>
-<span style="color:#007f7f"># or this one if you want it to run on designated minutes (usful for multiple jobs)</span>
-<span style="color:#007f7f"># 0,5,10,15,20,25,30,35,40,45,50,55 * * * * /bin/sh /path/to/google_dyndns_updater.sh</span></code></pre></div>
+<span style="color:#4e4e4e"># Create a crontab with the following to run the script every 5 minutes starting with minute 0.</span>
+<span style="color:#4e4e4e"># */5 * * * * /bin/sh /path/to/google_dyndns_updater.sh</span>
+<span style="color:#4e4e4e"># or this one if you want it to run on designated minutes (usful for multiple jobs)</span>
+<span style="color:#4e4e4e"># 0,5,10,15,20,25,30,35,40,45,50,55 * * * * /bin/sh /path/to/google_dyndns_updater.sh</span></code></pre></div>
 
       </div>
 
