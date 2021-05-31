@@ -60,24 +60,6 @@ until [ $V == 0 ];do clear;V=$((`date +%s -d&amp;#34;2022-01-01&amp;#34;`-`date 
     </item>
     
     <item>
-      <title>About</title>
-      <link>https://blog.burrows.family/about/</link>
-      <pubDate>Mon, 26 Oct 2020 08:45:20 -0400</pubDate>
-      
-      <guid>https://blog.burrows.family/about/</guid>
-      <description>I&amp;rsquo;m always trying something new. Currently you are looking at my attempt to learn Hugo.</description>
-    </item>
-    
-    <item>
-      <title>Contact</title>
-      <link>https://blog.burrows.family/contact/</link>
-      <pubDate>Mon, 26 Oct 2020 08:26:26 -0400</pubDate>
-      
-      <guid>https://blog.burrows.family/contact/</guid>
-      <description>This is just a placeholder for a page in this theme.</description>
-    </item>
-    
-    <item>
       <title>New Pastebin Features</title>
       <link>https://blog.burrows.family/posts/new-pastebin-features/</link>
       <pubDate>Sun, 25 Oct 2020 08:46:07 -0400</pubDate>
